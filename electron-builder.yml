@@ -189,6 +189,6 @@ publish:
   # upload; publishing happens at release time (GH_TOKEN + --publish).
   - provider: github
     owner: subhash928
-    repo: AI-Teacher
+    repo: AITeacher
     # All three CI jobs contribute assets; only the owner publishes it.
     releaseType: draft

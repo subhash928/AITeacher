@@ -163,7 +163,7 @@ describe("desktop packaging policy", () => {
 		const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
 		assert.equal(pkg.author.name, "Subhash");
 		assert.equal(pkg.author.email, "31509698+subhash928@users.noreply.github.com");
-		assert.equal(pkg.homepage, "https://github.com/subhash928/AI-Teacher");
+		assert.equal(pkg.homepage, "https://github.com/subhash928/AITeacher");
 		assert.equal(pkg.desktopName, "elenka.desktop");
 	});
 });

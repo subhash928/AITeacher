@@ -12,7 +12,7 @@
 			"url": "https://github.com/amosblomqvist/learnharness"
 		}
 	],
-	"homepage": "https://github.com/subhash928/AI-Teacher",
+	"homepage": "https://github.com/subhash928/AITeacher",
 	"desktopName": "elenka.desktop",
 	"description": "Elenka: an AI teacher that probes what you know, plans the path to your goal, and teaches one reasoning step at a time.",
 	"type": "module",

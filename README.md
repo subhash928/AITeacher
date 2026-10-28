@@ -11,10 +11,10 @@
 <p align="center"><em>The name comes from <a href="https://en.wikipedia.org/wiki/Socratic_method">elenchus</a>, Socrates' method of teaching through questions.</em></p>
 
 <p align="center">
-  <a href="https://github.com/subhash928/AI-Teacher/releases">Download</a> ·
+  <a href="https://github.com/subhash928/AITeacher/releases">Download</a> ·
   <a href="#how-it-works">How it works</a> ·
   <a href="docs/development.md">Documentation</a> ·
-  <a href="https://github.com/subhash928/AI-Teacher/issues">Issues</a>
+  <a href="https://github.com/subhash928/AITeacher/issues">Issues</a>
 </p>
 
 Elenka uses AI agents to plan and teach lessons from your current understanding to your goal. It builds a detailed picture of what you understand and how you reason. That picture is updated as you learn.
@@ -44,7 +44,7 @@ Future teaching sessions can read the graph instead of starting from scratch. Pr
 
 ## Download and get started
 
-**[Download from GitHub Releases](https://github.com/subhash928/AI-Teacher/releases)**
+**[Download from GitHub Releases](https://github.com/subhash928/AITeacher/releases)**
 
 - **macOS (Apple Silicon):** signed and notarized DMG. Drag the app to Applications.
 - **Windows (x64):** run the installer. It is currently unsigned; Windows may show an “unknown publisher” or SmartScreen warning.
@@ -73,7 +73,7 @@ npm test           # deterministic, no LLM, no network
 
 See the [development guide](docs/development.md), [architecture](docs/architecture.md), and [desktop release guide](docs/desktop-release.md).
 
-Questions, bug reports, and feature requests: [GitHub Issues](https://github.com/subhash928/AI-Teacher/issues).
+Questions, bug reports, and feature requests: [GitHub Issues](https://github.com/subhash928/AITeacher/issues).
 
 ## Credits
 

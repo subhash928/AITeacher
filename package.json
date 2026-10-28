@@ -1,14 +1,20 @@
 {
-	"name": "learnharness",
+	"name": "elenka",
 	"version": "0.3.9",
 	"license": "AGPL-3.0-only",
 	"author": {
-		"name": "Amos Blomqvist",
-		"email": "255718537+amosblomqvist@users.noreply.github.com"
+		"name": "Subhash",
+		"email": "31509698+subhash928@users.noreply.github.com"
 	},
-	"homepage": "https://github.com/amosblomqvist/learnharness",
-	"desktopName": "learnharness.desktop",
-	"description": "An agent harness for learning: adaptive teaching, practice, and a persistent knowledge graph.",
+	"contributors": [
+		{
+			"name": "Amos Blomqvist",
+			"url": "https://github.com/amosblomqvist/learnharness"
+		}
+	],
+	"homepage": "https://github.com/subhash928/AI-Teacher",
+	"desktopName": "elenka.desktop",
+	"description": "Elenka: an AI teacher that probes what you know, plans the path to your goal, and teaches one reasoning step at a time.",
 	"type": "module",
 	"private": true,
 	"main": "electron/main.cjs",
@@ -19,9 +25,9 @@
 		"test": "NODE_ENV=test tsx --test tests/*.test.ts tests/*.test.tsx",
 		"lint": "eslint .",
 		"typecheck": "tsc --noEmit",
-		"desktop:dev": "concurrently -k \"next dev\" \"LH_DEV_URL=http://localhost:3000 electron .\"",
+		"desktop:dev": "concurrently -k \"next dev\" \"ELENKA_DEV_URL=http://localhost:3000 electron .\"",
 		"dev:fresh": "bash scripts/dev-fresh.sh",
-		"desktop:dist": "rm -rf dist .next/standalone && next build && node scripts/smoke-provider-runtime.mjs && node scripts/build-server.mjs && node scripts/smoke-server.mjs && DEVELOPER_DIR=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer} APPLE_KEYCHAIN_PROFILE=LH_NOTARY APPLE_TEAM_ID=JS6XN22HY6 electron-builder --mac --arm64"
+		"desktop:dist": "rm -rf dist .next/standalone && next build && node scripts/smoke-provider-runtime.mjs && node scripts/build-server.mjs && node scripts/smoke-server.mjs && DEVELOPER_DIR=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer} APPLE_KEYCHAIN_PROFILE=ELENKA_NOTARY electron-builder --mac --arm64"
 	},
 	"dependencies": {
 		"@earendil-works/pi-agent-core": "1.4.0",

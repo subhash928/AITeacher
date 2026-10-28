@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Elenka app icon (flat). A geometric lowercase "e" (the open loop of a
-     question being worked through) with an amber dot for the moment it
-     clicks. Source for build/icon.ico and build/icon.png via
-     scripts/make-icons.mjs. -->
+<!-- Elenka app icon (flat): a question mark whose dot is a spark, the
+     Socratic question leading to the moment it clicks. Source for
+     build/icon.ico and build/icon.png via scripts/make-icons.mjs. -->
 <svg width="100%" height="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <rect x="0" y="0" width="1024" height="1024" rx="230" ry="230" style="fill:rgb(30,27,75);"/>
-    <path d="M252,512 L772,512 M772,512 A260,260 0 1 0 711,679" style="fill:none;stroke:white;stroke-width:76;stroke-linecap:round;stroke-linejoin:round;"/>
-    <circle cx="800" cy="250" r="50" style="fill:rgb(245,158,11);"/>
+    <path d="M362,410 A150,150 0 1 1 590,538 Q512,580 512,650" style="fill:none;stroke:white;stroke-width:92;stroke-linecap:round;stroke-linejoin:round;"/>
+    <path d="M512,720 Q537.76,786.24 604,812 Q537.76,837.76 512,904 Q486.24,837.76 420,812 Q486.24,786.24 512,720Z" style="fill:rgb(245,165,36);"/>
 </svg>

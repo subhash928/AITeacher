@@ -350,11 +350,23 @@ function createWindow(url) {
 	// and we do not ship that.
 	// "local-fonts": the appearance section's reading-font picker (2026-09-26).
 	const allowedPermissions = new Set(["media", "clipboard-sanitized-write", "local-fonts"]);
+	// Chromium hands the check handler a requestingOrigin with a trailing
+	// slash ("http://localhost:3000/"), which never equals URL.origin
+	// ("http://localhost:3000"), so every media check was denied and the
+	// renderer could not read mic labels or enumerate devices. Normalize
+	// both sides through URL before comparing.
+	const normalizeOrigin = (value) => {
+		if (!value) return null;
+		try {
+			return new URL(value).origin;
+		} catch {
+			return null;
+		}
+	};
 	const fromOwnOrigin = (origin, permission) =>
-		origin === allowedOrigin() && allowedPermissions.has(permission);
+		normalizeOrigin(origin) === allowedOrigin() && allowedPermissions.has(permission);
 	session.defaultSession.setPermissionRequestHandler((_wc, permission, callback, details) => {
-		const requestOrigin = details.requestingUrl ? new URL(details.requestingUrl).origin : null;
-		callback(fromOwnOrigin(requestOrigin, permission));
+		callback(fromOwnOrigin(details.requestingUrl, permission));
 	});
 	session.defaultSession.setPermissionCheckHandler((_wc, permission, origin) => {
 		return fromOwnOrigin(origin, permission);

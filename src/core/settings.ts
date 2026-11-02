@@ -296,6 +296,9 @@ export interface AppearanceSettings {
 	proseFontSize?: number;
 	/** Session names in CMU Serif (default true — today's look). */
 	sessionNameSerif?: boolean;
+	/** Agent's thinking blocks start expanded (default true). When on,
+	 *  they also stay open after streaming; off = collapsed until clicked. */
+	expandThinking?: boolean;
 	mdRendering?: MdRenderingSettings;
 }
 
@@ -392,6 +395,7 @@ export interface FactorySettings {
 		fontFamily: string | null;
 		proseFontSize: number;
 		sessionNameSerif: boolean;
+		expandThinking: boolean;
 		mdRendering: {
 			headingWeight: number;
 			boldColor: string | null;
@@ -412,6 +416,7 @@ export const FACTORY_SETTINGS: FactorySettings = {
 		fontFamily: null, // Source Sans 3
 		proseFontSize: 16,
 		sessionNameSerif: true,
+		expandThinking: true,
 		mdRendering: { headingWeight: 900, boldColor: null, italicColor: null },
 	},
 	graph: { enabled: true, rendering: true, extractionChunkTokens: 4096 },
@@ -564,6 +569,8 @@ function sanitizeAppearance(raw: Record<string, unknown>): AppearanceSettings {
 	}
 	const sessionNameSerif = boolOrDrop(raw.sessionNameSerif);
 	if (sessionNameSerif !== undefined) out.sessionNameSerif = sessionNameSerif;
+	const expandThinking = boolOrDrop(raw.expandThinking);
+	if (expandThinking !== undefined) out.expandThinking = expandThinking;
 	if (raw.mdRendering !== undefined) out.mdRendering = sanitizeMdRendering(raw.mdRendering);
 	return out;
 }

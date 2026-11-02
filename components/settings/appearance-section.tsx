@@ -288,6 +288,13 @@ export function AppearanceSection({
 					onChange={(on) => onSectionChange({ ...appearance, sessionNameSerif: on })}
 				/>
 			</SettingsRow>
+			<SettingsRow label="Expand agent's thinking" hint="Start the agent's thinking open, and keep it open after the reply" testid="row-expand-thinking">
+				<Toggle
+					checked={appearance?.expandThinking ?? true}
+					label="expand agent's thinking"
+					onChange={(on) => onSectionChange({ ...appearance, expandThinking: on })}
+				/>
+			</SettingsRow>
 			<SettingsRow label="Heading weight" hint={`${resolved.mdRendering.headingWeight}`} testid="row-heading-weight">
 				<CommitInput
 					type="number"

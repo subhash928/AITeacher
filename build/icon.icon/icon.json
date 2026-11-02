@@ -1,21 +1,17 @@
 {
   "fill" : {
-    "automatic-gradient" : "srgb:0.07843,0.07843,0.07843,1.00000"
+    "automatic-gradient" : "srgb:0.11765,0.10588,0.29412,1.00000"
   },
   "groups" : [
     {
       "layers" : [
         {
-          "image-name" : "lh_2 2.svg",
-          "name" : "lh_2 2"
+          "image-name" : "elenka_1.svg",
+          "name" : "elenka_1"
         },
         {
-          "image-name" : "lh_1 2.svg",
-          "name" : "lh_1 2"
-        },
-        {
-          "image-name" : "lh_0 2.svg",
-          "name" : "lh_0 2"
+          "image-name" : "elenka_0.svg",
+          "name" : "elenka_0"
         }
       ],
       "shadow" : {

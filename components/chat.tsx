@@ -15,6 +15,7 @@ import {
 } from "@/components/ai-elements/conversation";
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
 import { Reasoning, ReasoningContent, ReasoningTrigger } from "@/components/ai-elements/reasoning";
+import { useAppearance } from "@/components/settings/appearance";
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { BrailleSpinner } from "@/components/braille-spinner";
 import { LiveToolCard } from "@/components/artifacts/live-tool-card";
@@ -241,6 +242,8 @@ export function Chat({
 	 *  only decides whether the pill rides the composer. */
 	initialConfigured?: boolean;
 }) {
+	// The "Expand agent's thinking" setting (appearance): reasoning rows start open.
+	const { expandThinking } = useAppearance().appearance;
 	// Reattach plumbing (background-turn runner wave): the hook holds the
 	// settled terminal's callback — a stable ref assigned below, once
 	// syncFromServer exists (refs, not closures: no stale capture).
@@ -1554,7 +1557,7 @@ export function Chat({
 													}
 													case "reasoning":
 														return (
-															<Reasoning key={pi} isStreaming={status === "streaming" && isLastPart} className="mb-2">
+															<Reasoning key={pi} isStreaming={status === "streaming" && isLastPart} defaultOpen={expandThinking} className="mb-2">
 																<ReasoningTrigger />
 																<ReasoningContent>{part.text ?? ""}</ReasoningContent>
 															</Reasoning>

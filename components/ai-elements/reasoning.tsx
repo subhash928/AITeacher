@@ -68,7 +68,9 @@ export const Reasoning = memo(
     // re-fought a manual collapse — the block "wasn't collapsible until
     // it finished". Collapsed is the default; opening is always the
     // learner's click; the auto-close after the stream still tidies a
-    // row the learner had opened.
+    // row the learner had opened. The "Expand agent's thinking" setting
+    // passes defaultOpen: the row then starts open and stays open — the
+    // auto-close would undo exactly what the learner asked for.
     const resolvedDefaultOpen = defaultOpen ?? false;
 
     const [isOpen, setIsOpen] = useControllableState<boolean>({
@@ -82,6 +84,7 @@ export const Reasoning = memo(
     // Auto-close when streaming ends (once only, and only if it ever streamed)
     useEffect(() => {
       if (
+        !resolvedDefaultOpen &&
         hasEverStreamedRef.current &&
         !isStreaming &&
         isOpen &&
@@ -94,7 +97,7 @@ export const Reasoning = memo(
 
         return () => clearTimeout(timer);
       }
-    }, [isStreaming, isOpen, setIsOpen, hasAutoClosed]);
+    }, [resolvedDefaultOpen, isStreaming, isOpen, setIsOpen, hasAutoClosed]);
 
     const handleOpenChange = useCallback(
       (newOpen: boolean) => {
